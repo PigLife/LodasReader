@@ -1,0 +1,17 @@
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\bin\Release\Lodas-Reader.exe.config
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\bin\Release\Lodas-Reader.exe
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\bin\Release\Lodas-Reader.pdb
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\bin\Release\EntityFramework.dll
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\bin\Release\EntityFramework.xml
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\bin\Release\de\EntityFramework.resources.dll
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\MainWindow.g.cs
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\App.g.cs
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\Lodas-Reader_MarkupCompile.cache
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\Lodas-Reader_MarkupCompile.lref
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\MainWindow.baml
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\Lodas-Reader.g.resources
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\Lodas_Reader.Properties.Resources.resources
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\Lodas-Reader.csproj.GenerateResource.Cache
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\Lodas-Reader.exe
+C:\Users\LocalAdmin\Documents\Visual Studio 2012\Projects\Lodas-Reader\Lodas-Reader\Lodas-Reader\obj\Release\Lodas-Reader.pdb

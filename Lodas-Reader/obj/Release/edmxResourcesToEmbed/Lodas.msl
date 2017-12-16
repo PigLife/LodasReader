@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="u_lod_psd_festbezuege">
+      <EntityTypeMapping TypeName="Model.u_lod_psd_festbezuege">
+        <MappingFragment StoreEntitySet="u_lod_psd_festbezuege">
+          <ScalarProperty Name="kuerzung_psd" ColumnName="kuerzung#psd" />
+          <ScalarProperty Name="festbez_id_psd" ColumnName="festbez_id#psd" />
+          <ScalarProperty Name="auto_lfd_nr" ColumnName="auto_lfd_nr" />
+          <ScalarProperty Name="bnr" ColumnName="bnr" />
+          <ScalarProperty Name="mnr" ColumnName="mnr" />
+          <ScalarProperty Name="pnr_psd" ColumnName="pnr#psd" />
+          <ScalarProperty Name="akz_id" ColumnName="akz_id" />
+          <ScalarProperty Name="lohnart_nr_psd" ColumnName="lohnart_nr#psd" />
+          <ScalarProperty Name="betrag_psd" ColumnName="betrag#psd" />
+          <ScalarProperty Name="intervall_psd" ColumnName="intervall#psd" />
+          <ScalarProperty Name="gab_psd" ColumnName="gab#psd" />
+          <ScalarProperty Name="kz_monatslohn_psd" ColumnName="kz_monatslohn#psd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Model.u_lod_psd_festbezuege">
+        <ModificationFunctionMapping>
+          <UpdateFunction FunctionName="Model.Store.UpdateFestbezuege">
+            <ScalarProperty Name="kuerzung_psd" ParameterName="kuerzung_psd" Version="Current" />
+            <ScalarProperty Name="kz_monatslohn_psd" ParameterName="kz_monatslohn_psd" Version="Current" />
+            <ScalarProperty Name="gab_psd" ParameterName="gab_psd" Version="Current" />
+            <ScalarProperty Name="intervall_psd" ParameterName="intervall_psd" Version="Current" />
+            <ScalarProperty Name="betrag_psd" ParameterName="betrag_psd" Version="Current" />
+            <ScalarProperty Name="lohnart_nr_psd" ParameterName="lohnart_nr_psd" Version="Current" />
+            <ScalarProperty Name="akz_id" ParameterName="akz_id" Version="Current" />
+            <ScalarProperty Name="festbez_id_psd" ParameterName="festbez_id_psd" Version="Current" />
+            <ScalarProperty Name="pnr_psd" ParameterName="pnr_psd" Version="Current" />
+            <ScalarProperty Name="mnr" ParameterName="mnr" Version="Current" />
+            <ScalarProperty Name="bnr" ParameterName="bnr" Version="Current" />
+            <ScalarProperty Name="auto_lfd_nr" ParameterName="auto_lfd_nr" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Model.Store.DeleteFestbezuege">
+            <ScalarProperty Name="auto_lfd_nr" ParameterName="auto_lfd_nr" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="u_lod_psd_mitarbeiter">
+      <EntityTypeMapping TypeName="Model.u_lod_psd_mitarbeiter">
+        <MappingFragment StoreEntitySet="u_lod_psd_mitarbeiter">
+          <ScalarProperty Name="kz_aend_festbez_psd" ColumnName="kz_aend_festbez#psd" />
+          <ScalarProperty Name="unterdr_mindlohnpruef_psd" ColumnName="unterdr_mindlohnpruef#psd" />
+          <ScalarProperty Name="abw_mindlohn_psd" ColumnName="abw_mindlohn#psd" />
+          <ScalarProperty Name="mitarbeitertyp_psd" ColumnName="mitarbeitertyp#psd" />
+          <ScalarProperty Name="datum_tod_psd" ColumnName="datum_tod#psd" />
+          <ScalarProperty Name="abw_eintritt_sofortmeldung_psd" ColumnName="abw_eintritt_sofortmeldung#psd" />
+          <ScalarProperty Name="verw_ersteintr_elena_bn_psd" ColumnName="verw_ersteintr_elena_bn#psd" />
+          <ScalarProperty Name="ausscheiden_ruhestand_psd" ColumnName="ausscheiden_ruhestand#psd" />
+          <ScalarProperty Name="email_psd" ColumnName="email#psd" />
+          <ScalarProperty Name="adresse_strasse_nr_psd" ColumnName="adresse_strasse_nr#psd" />
+          <ScalarProperty Name="adresse_strassenname_psd" ColumnName="adresse_strassenname#psd" />
+          <ScalarProperty Name="storno_sofortmeldung_psd" ColumnName="storno_sofortmeldung#psd" />
+          <ScalarProperty Name="ma_guid_psd" ColumnName="ma_guid#psd" />
+          <ScalarProperty Name="loesch_nach_austr_unterdr_psd" ColumnName="loesch_nach_austr_unterdr#psd" />
+          <ScalarProperty Name="abrechnungsart_rzk" ColumnName="abrechnungsart#rzk" />
+          <ScalarProperty Name="abrechnung_stand_rzk" ColumnName="abrechnung_stand#rzk" />
+          <ScalarProperty Name="pnr_betriebliche_psd" ColumnName="pnr_betriebliche#psd" />
+          <ScalarProperty Name="adresse_plz_ausland_psd" ColumnName="adresse_plz_ausland#psd" />
+          <ScalarProperty Name="kz_subtables" ColumnName="kz_subtables" />
+          <ScalarProperty Name="ma_gruppe_psd" ColumnName="ma_gruppe#psd" />
+          <ScalarProperty Name="sba_ausbildungsende_psd" ColumnName="sba_ausbildungsende#psd" />
+          <ScalarProperty Name="sba_ausbildungsbeginn_psd" ColumnName="sba_ausbildungsbeginn#psd" />
+          <ScalarProperty Name="datum_studienbesch_psd" ColumnName="datum_studienbesch#psd" />
+          <ScalarProperty Name="aufenthaltserlaubnis_psd" ColumnName="aufenthaltserlaubnis#psd" />
+          <ScalarProperty Name="arbeitserlaubnis_psd" ColumnName="arbeitserlaubnis#psd" />
+          <ScalarProperty Name="akz_id" ColumnName="akz_id" />
+          <ScalarProperty Name="geburtsland_psd" ColumnName="geburtsland#psd" />
+          <ScalarProperty Name="gebort_psd" ColumnName="gebort#psd" />
+          <ScalarProperty Name="nazu_gebname_psd" ColumnName="nazu_gebname#psd" />
+          <ScalarProperty Name="gebname_psd" ColumnName="gebname#psd" />
+          <ScalarProperty Name="vorsatzwort_gebname_psd" ColumnName="vorsatzwort_gebname#psd" />
+          <ScalarProperty Name="eur_versnr_psd" ColumnName="eur_versnr#psd" />
+          <ScalarProperty Name="einzelabrechnung_kz_rzk" ColumnName="einzelabrechnung_kz#rzk" />
+          <ScalarProperty Name="probeabrechnung_kz_rzk" ColumnName="probeabrechnung_kz#rzk" />
+          <ScalarProperty Name="vorweg_abr_abruf_termin_kz_psd" ColumnName="vorweg_abr_abruf_termin_kz#psd" />
+          <ScalarProperty Name="ebz_nach_austritt_kz_psd" ColumnName="ebz_nach_austritt_kz#psd" />
+          <ScalarProperty Name="beschaeft_ende_kz_psd" ColumnName="beschaeft_ende_kz#psd" />
+          <ScalarProperty Name="ersteintrittsdatum_psd" ColumnName="ersteintrittsdatum#psd" />
+          <ScalarProperty Name="schwerbeschaedigt_psd" ColumnName="schwerbeschaedigt#psd" />
+          <ScalarProperty Name="staatsangehoerigkeit_psd" ColumnName="staatsangehoerigkeit#psd" />
+          <ScalarProperty Name="familienstand_psd" ColumnName="familienstand#psd" />
+          <ScalarProperty Name="sozialversicherung_nr_psd" ColumnName="sozialversicherung_nr#psd" />
+          <ScalarProperty Name="geschlecht_psd" ColumnName="geschlecht#psd" />
+          <ScalarProperty Name="geburtsdatum_ttmmjj_psd" ColumnName="geburtsdatum_ttmmjj#psd" />
+          <ScalarProperty Name="adresse_anschriftenzusatz_psd" ColumnName="adresse_anschriftenzusatz#psd" />
+          <ScalarProperty Name="adressart_psd" ColumnName="adressart#psd" />
+          <ScalarProperty Name="adresse_nation_kz_psd" ColumnName="adresse_nation_kz#psd" />
+          <ScalarProperty Name="adresse_ort_psd" ColumnName="adresse_ort#psd" />
+          <ScalarProperty Name="adresse_plz_psd" ColumnName="adresse_plz#psd" />
+          <ScalarProperty Name="adresse_strasse_psd" ColumnName="adresse_strasse#psd" />
+          <ScalarProperty Name="duevo_vorsatzwort_psd" ColumnName="duevo_vorsatzwort#psd" />
+          <ScalarProperty Name="duevo_namenszusatz_psd" ColumnName="duevo_namenszusatz#psd" />
+          <ScalarProperty Name="duevo_titel_psd" ColumnName="duevo_titel#psd" />
+          <ScalarProperty Name="duevo_vorname_psd" ColumnName="duevo_vorname#psd" />
+          <ScalarProperty Name="duevo_familienname_psd" ColumnName="duevo_familienname#psd" />
+          <ScalarProperty Name="pnr_psd" ColumnName="pnr#psd" />
+          <ScalarProperty Name="mnr" ColumnName="mnr" />
+          <ScalarProperty Name="bnr" ColumnName="bnr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

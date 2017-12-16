@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="u_lod_psd_festbezuege" EntityType="Model.Store.u_lod_psd_festbezuege" store:Name="u_lod_psd_festbezuege" store:Type="Views" Schema="DATEV" />
+    <EntitySet Name="u_lod_psd_mitarbeiter" EntityType="Model.Store.u_lod_psd_mitarbeiter" store:Name="u_lod_psd_mitarbeiter" store:Type="Views" Schema="DATEV" />
+  </EntityContainer>
+  <EntityType Name="u_lod_psd_festbezuege">
+    <Key>
+      <PropertyRef Name="auto_lfd_nr" />
+    </Key>
+    <Property Name="auto_lfd_nr" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bnr" Type="int" Nullable="false" />
+    <Property Name="mnr" Type="int" Nullable="false" />
+    <Property Name="pnr#psd" Type="int" Nullable="false" />
+    <Property Name="festbez_id#psd" Type="smallint" Nullable="false" />
+    <Property Name="akz_id" Type="int" />
+    <Property Name="lohnart_nr#psd" Type="smallint" />
+    <Property Name="betrag#psd" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="intervall#psd" Type="smallint" />
+    <Property Name="gab#psd" Type="varchar" MaxLength="26" />
+    <Property Name="kz_monatslohn#psd" Type="smallint" />
+    <Property Name="kuerzung#psd" Type="smallint" />
+  </EntityType>
+  <EntityType Name="u_lod_psd_mitarbeiter">
+    <Key>
+      <PropertyRef Name="bnr" />
+      <PropertyRef Name="mnr" />
+      <PropertyRef Name="pnr#psd" />
+    </Key>
+    <Property Name="bnr" Type="int" Nullable="false" />
+    <Property Name="mnr" Type="int" Nullable="false" />
+    <Property Name="pnr#psd" Type="int" Nullable="false" />
+    <Property Name="duevo_familienname#psd" Type="varchar" MaxLength="30" />
+    <Property Name="duevo_vorname#psd" Type="varchar" MaxLength="30" />
+    <Property Name="duevo_titel#psd" Type="varchar" MaxLength="20" />
+    <Property Name="duevo_namenszusatz#psd" Type="varchar" MaxLength="15" />
+    <Property Name="duevo_vorsatzwort#psd" Type="varchar" MaxLength="14" />
+    <Property Name="adresse_strasse#psd" Type="varchar" MaxLength="36" />
+    <Property Name="adresse_plz#psd" Type="varchar" MaxLength="5" />
+    <Property Name="adresse_ort#psd" Type="varchar" MaxLength="34" />
+    <Property Name="adresse_nation_kz#psd" Type="varchar" MaxLength="3" />
+    <Property Name="adressart#psd" Type="smallint" />
+    <Property Name="adresse_anschriftenzusatz#psd" Type="varchar" MaxLength="40" />
+    <Property Name="geburtsdatum_ttmmjj#psd" Type="varchar" MaxLength="10" />
+    <Property Name="geschlecht#psd" Type="varchar" MaxLength="1" />
+    <Property Name="sozialversicherung_nr#psd" Type="varchar" MaxLength="13" />
+    <Property Name="familienstand#psd" Type="varchar" MaxLength="1" />
+    <Property Name="staatsangehoerigkeit#psd" Type="smallint" />
+    <Property Name="schwerbeschaedigt#psd" Type="varchar" MaxLength="1" />
+    <Property Name="ersteintrittsdatum#psd" Type="datetime" />
+    <Property Name="beschaeft_ende_kz#psd" Type="varchar" MaxLength="1" />
+    <Property Name="ebz_nach_austritt_kz#psd" Type="varchar" MaxLength="1" />
+    <Property Name="vorweg_abr_abruf_termin_kz#psd" Type="smallint" />
+    <Property Name="probeabrechnung_kz#rzk" Type="varchar" MaxLength="1" />
+    <Property Name="einzelabrechnung_kz#rzk" Type="varchar" MaxLength="1" />
+    <Property Name="eur_versnr#psd" Type="varchar" MaxLength="20" />
+    <Property Name="vorsatzwort_gebname#psd" Type="varchar" MaxLength="14" />
+    <Property Name="gebname#psd" Type="varchar" MaxLength="30" />
+    <Property Name="nazu_gebname#psd" Type="varchar" MaxLength="15" />
+    <Property Name="gebort#psd" Type="varchar" MaxLength="34" />
+    <Property Name="geburtsland#psd" Type="smallint" />
+    <Property Name="akz_id" Type="int" />
+    <Property Name="arbeitserlaubnis#psd" Type="datetime" />
+    <Property Name="aufenthaltserlaubnis#psd" Type="datetime" />
+    <Property Name="datum_studienbesch#psd" Type="datetime" />
+    <Property Name="sba_ausbildungsbeginn#psd" Type="datetime" />
+    <Property Name="sba_ausbildungsende#psd" Type="datetime" />
+    <Property Name="ma_gruppe#psd" Type="varchar" MaxLength="8" />
+    <Property Name="kz_subtables" Type="smallint" />
+    <Property Name="adresse_plz_ausland#psd" Type="varchar" MaxLength="10" />
+    <Property Name="pnr_betriebliche#psd" Type="varchar" MaxLength="20" />
+    <Property Name="abrechnung_stand#rzk" Type="datetime" />
+    <Property Name="abrechnungsart#rzk" Type="smallint" />
+    <Property Name="loesch_nach_austr_unterdr#psd" Type="varchar" MaxLength="1" />
+    <Property Name="ma_guid#psd" Type="varchar" MaxLength="36" />
+    <Property Name="storno_sofortmeldung#psd" Type="varchar" MaxLength="1" />
+    <Property Name="adresse_strassenname#psd" Type="varchar" MaxLength="33" />
+    <Property Name="adresse_strasse_nr#psd" Type="varchar" MaxLength="9" />
+    <Property Name="email#psd" Type="varchar" MaxLength="60" />
+    <Property Name="ausscheiden_ruhestand#psd" Type="smallint" />
+    <Property Name="verw_ersteintr_elena_bn#psd" Type="varchar" MaxLength="1" />
+    <Property Name="abw_eintritt_sofortmeldung#psd" Type="datetime" />
+    <Property Name="datum_tod#psd" Type="datetime" />
+    <Property Name="mitarbeitertyp#psd" Type="smallint" />
+    <Property Name="abw_mindlohn#psd" Type="numeric" Precision="4" Scale="2" />
+    <Property Name="unterdr_mindlohnpruef#psd" Type="smallint" />
+    <Property Name="kz_aend_festbez#psd" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <Function Name="DeleteFestbezuege" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion">
+    <CommandText>
+          DELETE u_lod_psd_festbezuege
+          where auto_lfd_nr = @auto_lfd_nr;
+        </CommandText>
+    <Parameter Name="auto_lfd_nr" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateFestbezuege" Aggregate="false" BuiltIn="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion">
+    <CommandText>
+          UPDATE DATEV.u_lod_psd_festbezuege_hist
+          SET betrag#psd = @betrag_psd
+          where auto_lfd_nr = @auto_lfd_nr;
+        </CommandText>
+    <Parameter Name="auto_lfd_nr" Type="int" Mode="In" />
+    <Parameter Name="bnr" Type="int" Mode="In" />
+    <Parameter Name="mnr" Type="int" Mode="In" />
+    <Parameter Name="pnr_psd" Type="int" Mode="In" />
+    <Parameter Name="festbez_id_psd" Type="smallint" Mode="In" />
+    <Parameter Name="akz_id" Type="int" Mode="In" />
+    <Parameter Name="lohnart_nr_psd" Type="smallint" Mode="In" />
+    <Parameter Name="betrag_psd" Type="numeric" Precision="9" Scale="2" Mode="In" />
+    <Parameter Name="intervall_psd" Type="smallint" Mode="In" />
+    <Parameter Name="gab_psd" Type="varchar" MaxLength="26" Mode="In" />
+    <Parameter Name="kz_monatslohn_psd" Type="smallint" Mode="In" />
+    <Parameter Name="kuerzung_psd" Type="smallint" Mode="In" />
+  </Function>
+</Schema>

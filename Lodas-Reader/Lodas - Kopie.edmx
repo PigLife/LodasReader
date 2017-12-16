@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="u_dgp_users" EntityType="Model.Store.u_dgp_users" store:Type="Tables" Schema="DATEV" />
+          <EntitySet Name="u_lod_psd_festbezuege" EntityType="Model.Store.u_lod_psd_festbezuege" store:Type="Views" Schema="DATEV" />
+        </EntityContainer>
+        <EntityType Name="u_dgp_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="hash" Type="varbinary" MaxLength="256" />
+          <Property Name="type" Type="nvarchar" MaxLength="20" />
+          <Property Name="changed" Type="datetime" Nullable="false" />
+          <Property Name="newhash" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="u_lod_psd_festbezuege">
+          <Key>
+            <PropertyRef Name="auto_lfd_nr" />
+          </Key>
+          <Property Name="auto_lfd_nr" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="bnr" Type="int" Nullable="false" />
+          <Property Name="mnr" Type="int" Nullable="false" />
+          <Property Name="pnr#psd" Type="int" Nullable="false" />
+          <Property Name="festbez_id#psd" Type="smallint" Nullable="false" />
+          <Property Name="akz_id" Type="int" />
+          <Property Name="lohnart_nr#psd" Type="smallint" />
+          <Property Name="betrag#psd" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="intervall#psd" Type="smallint" />
+          <Property Name="gab#psd" Type="varchar" MaxLength="26" />
+          <Property Name="kz_monatslohn#psd" Type="smallint" />
+          <Property Name="kuerzung#psd" Type="smallint" />
+        </EntityType>
+      <Function Name="DeleteFestbezuege" Aggregate="false" BuiltIn="false"
+              NiladicFunction="false" IsComposable="false"
+              ParameterTypeSemantics="AllowImplicitConversion">
+        <CommandText>
+           DELETE u_lod_psd_festbezuege
+           where auto_lfd_nr = @auto_lfd_nr;
+        </CommandText>
+        <Parameter Name="auto_lfd_nr" Type="int" Mode="In" />
+      </Function>
+      <Function Name="UpdateFestbezuege" Aggregate="false" BuiltIn="false"
+              IsComposable="false"
+              ParameterTypeSemantics="AllowImplicitConversion">
+        <CommandText>
+          UPDATE DATEV.u_lod_psd_festbezuege_hist
+          SET betrag#psd = @betrag_psd
+          where auto_lfd_nr = @auto_lfd_nr;
+        </CommandText>
+        <Parameter Name="auto_lfd_nr" Type="int" Mode="In" />
+        <Parameter Name="bnr" Type="int" Mode="In" />
+        <Parameter Name="mnr" Type="int" Mode="In" />
+        <Parameter Name="pnr_psd" Type="int" Mode="In" />
+        <Parameter Name="festbez_id_psd" Type="smallint" Mode="In"/>
+        <Parameter Name="akz_id" Type="int" Mode="In"/>
+        <Parameter Name="lohnart_nr_psd" Type="smallint" Mode="In" />
+        <Parameter Name="betrag_psd" Type="numeric" Precision="9" Scale="2" Mode="In"/>
+        <Parameter Name="intervall_psd" Type="smallint" Mode="In"/>
+        <Parameter Name="gab_psd" Type="varchar" MaxLength="26" Mode="In"/>
+        <Parameter Name="kz_monatslohn_psd" Type="smallint" Mode="In"/>
+        <Parameter Name="kuerzung_psd" Type="smallint" Mode="In"/>
+      </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="u_lod_psd_festbezuege" EntityType="Model.u_lod_psd_festbezuege" />
+          <EntitySet Name="u_dgp_users" EntityType="Model.u_dgp_users" />
+          <FunctionImport Name="Update">
+            <Parameter Name="auto_lfd_nr" Mode="In" Type="Int32" />
+            <Parameter Name="bnr" Mode="In" Type="Int32" />
+            <Parameter Name="mnr" Mode="In" Type="Int32" />
+            <Parameter Name="pnr_psd" Mode="In" Type="Int32" />
+            <Parameter Name="festbez_id_psd" Mode="In" Type="Int16" />
+            <Parameter Name="akz_id" Mode="In" Type="Int32" />
+            <Parameter Name="lohnart_nr_psd" Mode="In" Type="Int16" />
+            <Parameter Name="betrag_psd" Mode="In" Type="Decimal" />
+            <Parameter Name="intervall_psd" Mode="In" Type="Int16" />
+            <Parameter Name="gab_psd" Mode="In" Type="String" />
+            <Parameter Name="kz_monatslohn_psd" Mode="In" Type="Int16" />
+            <Parameter Name="kuerzung_psd" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="Delete">
+            <Parameter Name="auto_lfd_nr" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="u_lod_psd_festbezuege">
+          <Key>
+            <PropertyRef Name="auto_lfd_nr" />
+          </Key>
+          <Property Name="bnr" Type="Int32" Nullable="false" />
+          <Property Name="mnr" Type="Int32" Nullable="false" />
+          <Property Name="pnr_psd" Type="Int32" Nullable="false" />
+          <Property Name="akz_id" Type="Int32" />
+          <Property Name="lohnart_nr_psd" Type="Int16" />
+          <Property Name="betrag_psd" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="intervall_psd" Type="Int16" />
+          <Property Name="gab_psd" Type="String" MaxLength="26" Unicode="false" FixedLength="false" />
+          <Property Name="kz_monatslohn_psd" Type="Int16" />
+          <Property Type="Int32" Name="auto_lfd_nr" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="festbez_id_psd" Nullable="false" />
+          <Property Type="Int16" Name="kuerzung_psd" />
+        </EntityType>
+        <EntityType Name="u_dgp_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="hash" MaxLength="256" FixedLength="false" />
+          <Property Type="String" Name="type" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="changed" Nullable="false" Precision="3" />
+          <Property Type="String" Name="newhash" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="u_lod_psd_festbezuege">
+            <EntityTypeMapping TypeName="Model.u_lod_psd_festbezuege">
+              <MappingFragment StoreEntitySet="u_lod_psd_festbezuege">
+                <ScalarProperty Name="kuerzung_psd" ColumnName="kuerzung#psd" />
+                <ScalarProperty Name="festbez_id_psd" ColumnName="festbez_id#psd" />
+                <ScalarProperty Name="auto_lfd_nr" ColumnName="auto_lfd_nr" />
+                <ScalarProperty Name="bnr" ColumnName="bnr" />
+                <ScalarProperty Name="mnr" ColumnName="mnr" />
+                <ScalarProperty Name="pnr_psd" ColumnName="pnr#psd" />
+                <ScalarProperty Name="akz_id" ColumnName="akz_id" />
+                <ScalarProperty Name="lohnart_nr_psd" ColumnName="lohnart_nr#psd" />
+                <ScalarProperty Name="betrag_psd" ColumnName="betrag#psd" />
+                <ScalarProperty Name="intervall_psd" ColumnName="intervall#psd" />
+                <ScalarProperty Name="gab_psd" ColumnName="gab#psd" />
+                <ScalarProperty Name="kz_monatslohn_psd" ColumnName="kz_monatslohn#psd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="Model.u_lod_psd_festbezuege">
+              <ModificationFunctionMapping>
+                <UpdateFunction FunctionName="Model.Store.UpdateFestbezuege">
+                  <ScalarProperty Name="kuerzung_psd" ParameterName="kuerzung_psd" Version="Current" />
+                  <ScalarProperty Name="kz_monatslohn_psd" ParameterName="kz_monatslohn_psd" Version="Current" />
+                  <ScalarProperty Name="gab_psd" ParameterName="gab_psd" Version="Current" />
+                  <ScalarProperty Name="intervall_psd" ParameterName="intervall_psd" Version="Current" />
+                  <ScalarProperty Name="betrag_psd" ParameterName="betrag_psd" Version="Current" />
+                  <ScalarProperty Name="lohnart_nr_psd" ParameterName="lohnart_nr_psd" Version="Current" />
+                  <ScalarProperty Name="festbez_id_psd" ParameterName="festbez_id_psd" Version="Current" />
+                  <ScalarProperty Name="pnr_psd" ParameterName="pnr_psd" Version="Current" />
+                  <ScalarProperty Name="akz_id" ParameterName="akz_id" Version="Current" />
+                  <ScalarProperty Name="mnr" ParameterName="mnr" Version="Current" />
+                  <ScalarProperty Name="bnr" ParameterName="bnr" Version="Current" />
+                  <ScalarProperty Name="auto_lfd_nr" ParameterName="auto_lfd_nr" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="Model.Store.DeleteFestbezuege">
+                  <ScalarProperty Name="auto_lfd_nr" ParameterName="auto_lfd_nr" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="u_dgp_users">
+            <EntityTypeMapping TypeName="Model.u_dgp_users">
+              <MappingFragment StoreEntitySet="u_dgp_users">
+                <ScalarProperty Name="newhash" ColumnName="newhash" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="hash" ColumnName="hash" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Update" FunctionName="Model.Store.UpdateFestbezuege" />
+          <FunctionImportMapping FunctionImportName="Delete" FunctionName="Model.Store.DeleteFestbezuege" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="d3dba883b5b24012a62154e87fb17b29" Name="Diagramm1">
+        <EntityTypeShape EntityType="Model.u_lod_psd_festbezuege" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.u_dgp_users" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

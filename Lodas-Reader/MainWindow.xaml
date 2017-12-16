@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Lodas_Reader" x:Name="Lodas_Reader_MainWindow" x:Class="Lodas_Reader.MainWindow"
+        Title="Lodas-Reader" Height="381.343" Width="662.313">
+    <Grid>
+        <DataGrid x:Name ="Loehne" Margin="0,78,0,0" IsSynchronizedWithCurrentItem="False">
+            <DataGrid.DataContext>
+                <local:u_lod_psd_festbezuege/>
+            </DataGrid.DataContext>
+        </DataGrid>
+        <Label x:Name="lblServer" Content="Server-Instanz" HorizontalAlignment="Left" Height="35" Margin="10,10,0,0" VerticalAlignment="Top" Width="95"/>
+        <TextBox x:Name="tbxServer" HorizontalAlignment="Left" Height="25" Margin="110,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Loaded="tbxServer_loaded"/>
+        <Label x:Name="lblPassword" Content="Passwort" HorizontalAlignment="Left" Height="35" Margin="10,35,0,0" VerticalAlignment="Top" Width="95"/>
+        <TextBox x:Name="tbxPasswort" HorizontalAlignment="Left" Height="25" Margin="110,0,0,281" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="129" TextChanged="tbxPassword_OnChange" ToolTip="LODAS Passwort eingeben (D_A_LODASDB)"/>
+        <Button x:Name="btnShow" Content="Datenbank anzeigen" HorizontalAlignment="Left" Height="50" Margin="330,10,0,0" VerticalAlignment="Top" Width="154" Click="bntShow_onClick"/>
+        <Button x:Name="btnEnd" Content="Beenden" HorizontalAlignment="Left" Height="50" Margin="490,11,0,0" VerticalAlignment="Top" Width="154" Click="btnEnd_Click"/>
+    </Grid>
+</Window>

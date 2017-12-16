@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="u_lod_psd_festbezuege" EntityType="Model.u_lod_psd_festbezuege" />
+    <FunctionImport Name="Update">
+      <Parameter Name="auto_lfd_nr" Mode="In" Type="Int32" />
+      <Parameter Name="bnr" Mode="In" Type="Int32" />
+      <Parameter Name="mnr" Mode="In" Type="Int32" />
+      <Parameter Name="pnr_psd" Mode="In" Type="Int32" />
+      <Parameter Name="festbez_id_psd" Mode="In" Type="Int16" />
+      <Parameter Name="akz_id" Mode="In" Type="Int32" />
+      <Parameter Name="lohnart_nr_psd" Mode="In" Type="Int16" />
+      <Parameter Name="betrag_psd" Mode="In" Type="Decimal" />
+      <Parameter Name="intervall_psd" Mode="In" Type="Int16" />
+      <Parameter Name="gab_psd" Mode="In" Type="String" />
+      <Parameter Name="kz_monatslohn_psd" Mode="In" Type="Int16" />
+      <Parameter Name="kuerzung_psd" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="Delete">
+      <Parameter Name="auto_lfd_nr" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="u_lod_psd_mitarbeiter" EntityType="Model.u_lod_psd_mitarbeiter" />
+    <AssociationSet Name="u_lod_psd_mitarbeiteru_lod_psd_festbezuege" Association="Model.u_lod_psd_mitarbeiteru_lod_psd_festbezuege">
+      <End Role="u_lod_psd_mitarbeiter" EntitySet="u_lod_psd_mitarbeiter" />
+      <End Role="u_lod_psd_festbezuege" EntitySet="u_lod_psd_festbezuege" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="u_lod_psd_festbezuege">
+    <Key>
+      <PropertyRef Name="auto_lfd_nr" />
+    </Key>
+    <Property Name="bnr" Type="Int32" Nullable="false" />
+    <Property Name="mnr" Type="Int32" Nullable="false" />
+    <Property Name="pnr_psd" Type="Int32" Nullable="false" />
+    <Property Name="akz_id" Type="Int32" />
+    <Property Name="lohnart_nr_psd" Type="Int16" />
+    <Property Name="betrag_psd" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="intervall_psd" Type="Int16" />
+    <Property Name="gab_psd" Type="String" MaxLength="26" Unicode="false" FixedLength="false" />
+    <Property Name="kz_monatslohn_psd" Type="Int16" />
+    <Property Type="Int32" Name="auto_lfd_nr" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int16" Name="festbez_id_psd" Nullable="false" />
+    <Property Type="Int16" Name="kuerzung_psd" />
+    <NavigationProperty Name="u_lod_psd_mitarbeiter" Relationship="Model.u_lod_psd_mitarbeiteru_lod_psd_festbezuege" FromRole="u_lod_psd_festbezuege" ToRole="u_lod_psd_mitarbeiter" />
+  </EntityType>
+  <EntityType Name="u_lod_psd_mitarbeiter">
+    <Key>
+      <PropertyRef Name="bnr" />
+      <PropertyRef Name="mnr" />
+      <PropertyRef Name="pnr_psd" />
+    </Key>
+    <Property Type="Int32" Name="bnr" Nullable="false" />
+    <Property Type="Int32" Name="mnr" Nullable="false" />
+    <Property Type="Int32" Name="pnr_psd" Nullable="false" />
+    <Property Type="String" Name="duevo_familienname_psd" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="duevo_vorname_psd" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="duevo_titel_psd" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="duevo_namenszusatz_psd" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="duevo_vorsatzwort_psd" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="adresse_strasse_psd" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="adresse_plz_psd" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="adresse_ort_psd" MaxLength="34" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="adresse_nation_kz_psd" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="adressart_psd" />
+    <Property Type="String" Name="adresse_anschriftenzusatz_psd" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="geburtsdatum_ttmmjj_psd" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="geschlecht_psd" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sozialversicherung_nr_psd" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="familienstand_psd" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="staatsangehoerigkeit_psd" />
+    <Property Type="String" Name="schwerbeschaedigt_psd" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ersteintrittsdatum_psd" Precision="3" />
+    <Property Type="String" Name="beschaeft_ende_kz_psd" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ebz_nach_austritt_kz_psd" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="vorweg_abr_abruf_termin_kz_psd" />
+    <Property Type="String" Name="probeabrechnung_kz_rzk" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="einzelabrechnung_kz_rzk" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="eur_versnr_psd" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="vorsatzwort_gebname_psd" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="gebname_psd" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nazu_gebname_psd" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="gebort_psd" MaxLength="34" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="geburtsland_psd" />
+    <Property Type="Int32" Name="akz_id" />
+    <Property Type="DateTime" Name="arbeitserlaubnis_psd" Precision="3" />
+    <Property Type="DateTime" Name="aufenthaltserlaubnis_psd" Precision="3" />
+    <Property Type="DateTime" Name="datum_studienbesch_psd" Precision="3" />
+    <Property Type="DateTime" Name="sba_ausbildungsbeginn_psd" Precision="3" />
+    <Property Type="DateTime" Name="sba_ausbildungsende_psd" Precision="3" />
+    <Property Type="String" Name="ma_gruppe_psd" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="kz_subtables" />
+    <Property Type="String" Name="adresse_plz_ausland_psd" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="pnr_betriebliche_psd" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="abrechnung_stand_rzk" Precision="3" />
+    <Property Type="Int16" Name="abrechnungsart_rzk" />
+    <Property Type="String" Name="loesch_nach_austr_unterdr_psd" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ma_guid_psd" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="storno_sofortmeldung_psd" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="adresse_strassenname_psd" MaxLength="33" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="adresse_strasse_nr_psd" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email_psd" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="ausscheiden_ruhestand_psd" />
+    <Property Type="String" Name="verw_ersteintr_elena_bn_psd" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="abw_eintritt_sofortmeldung_psd" Precision="3" />
+    <Property Type="DateTime" Name="datum_tod_psd" Precision="3" />
+    <Property Type="Int16" Name="mitarbeitertyp_psd" />
+    <Property Type="Decimal" Name="abw_mindlohn_psd" Precision="4" Scale="2" />
+    <Property Type="Int16" Name="unterdr_mindlohnpruef_psd" />
+    <Property Type="String" Name="kz_aend_festbez_psd" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="u_lod_psd_festbezuege" Relationship="Model.u_lod_psd_mitarbeiteru_lod_psd_festbezuege" FromRole="u_lod_psd_mitarbeiter" ToRole="u_lod_psd_festbezuege" />
+  </EntityType>
+  <Association Name="u_lod_psd_mitarbeiteru_lod_psd_festbezuege">
+    <End Type="Model.u_lod_psd_mitarbeiter" Role="u_lod_psd_mitarbeiter" Multiplicity="1" />
+    <End Type="Model.u_lod_psd_festbezuege" Role="u_lod_psd_festbezuege" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="u_lod_psd_mitarbeiter">
+        <PropertyRef Name="bnr" />
+        <PropertyRef Name="mnr" />
+        <PropertyRef Name="pnr_psd" />
+      </Principal>
+      <Dependent Role="u_lod_psd_festbezuege">
+        <PropertyRef Name="bnr" />
+        <PropertyRef Name="mnr" />
+        <PropertyRef Name="pnr_psd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

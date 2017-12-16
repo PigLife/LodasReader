@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0a9ee40124124f3b87d0ee5bda30f77c" Name="Diagramm1" ZoomLevel="89">
+        <EntityTypeShape EntityType="Model.u_lod_psd_festbezuege" Width="3.125" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.u_lod_psd_mitarbeiter" Width="1.5" PointX="5.625" PointY="0.5" />
+        <AssociationConnector Association="Model.u_lod_psd_mitarbeiteru_lod_psd_festbezuege" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
